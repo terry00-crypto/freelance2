@@ -1,0 +1,28 @@
+public class HexagonalNumber {
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("Please provide an integer as an argument.");
+            return;
+        }
+        
+        int n = 0;
+        try {
+            n = Integer.parseInt(args[0]);
+        } catch (NumberFormatException e) {
+            System.out.println("The argument must be an integer.");
+            return;
+        }
+        
+        if (n < 1) {
+            System.out.println("The argument must be a positive integer.");
+            return;
+        }
+        
+        int hexagonalNumber = getHexagonalNumber(n);
+        System.out.println("The " + n + "th hexagonal number is " + hexagonalNumber + ".");
+    }
+    
+    public static int getHexagonalNumber(int n) {
+        return n * (2 * n - 1);
+    }
+}
